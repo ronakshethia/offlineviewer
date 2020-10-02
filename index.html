@@ -1,0 +1,50 @@
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css" type="text/css">
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+
+   <style>
+        body {
+            margin: 0;
+        }
+        #forgeViewer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: #F0F8FF;
+        }
+    </style>
+</head>
+<body>
+  <div id="MyViewerDiv"></div>
+  <!-- Developer JS -->
+  <script>
+      var myViewerDiv = document.getElementById('MyViewerDiv');
+	  
+      var config3d = {
+	  loaderExtensions: { svf: "Autodesk.MemoryLimited" }
+	  };
+      var options = {
+          'env' : 'Local',
+          'document' : './JCI/output.svf',
+		  //'useConsolidation' : 'true',
+		  //'consolidationMemoryLimit' : '150 * 1024 * 1024',
+		  //skipPropertyDb : true,
+		  //useConsolidation : true,
+		  
+      };
+	  var viewer = new Autodesk.Viewing.GuiViewer3D(myViewerDiv, config3d);
+	  //viewer.loadExtension('Autodesk.Viewing.MemoryLimitedDebug');
+	 // viewer.loadExtension('Autodesk.Viewing.MemoryManager');
+	  //var viewer = new Autodesk.Viewing.Viewer3D(myViewerDiv, config);
+	  
+      Autodesk.Viewing.Initializer(options, function() {
+        viewer.start(options.document, options);
+      });
+  </script>
+</body>
+
+</html>
