@@ -1,0 +1,43 @@
+{
+  ObjectId 100,
+  AreaName Reception,
+  ConnectedAreas [
+    {
+      ObjectId 101,
+      AreaName East Side,
+      ConnectedAreas [
+        {
+          ObjectId 103,
+          AreaName Nitin Cabin,
+          ConnectedAreas [
+            
+          ]
+        },
+        {
+          ObjectId 104,
+          AreaName Meeting Room,
+          ConnectedAreas [
+            
+          ]
+        },
+        {
+          ObjectId 105,
+          AreaName Printer,
+          ConnectedAreas [
+            
+          ]
+        },
+        
+      ]
+    },
+    {
+      ObjectId 102,
+      AreaName West Side,
+      ConnectedAreas [
+        {
+          
+        }
+      ]
+    }
+  ]
+}
